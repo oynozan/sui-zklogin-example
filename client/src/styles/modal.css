@@ -1,0 +1,41 @@
+.modal.outer {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: rgba(0, 0, 0, .5);
+
+    & .inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        background-color: #383838;
+        border: 1px solid #fefefe20;
+        border-radius: 6px;
+        padding: 20px;
+
+        & button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            font-size: 16px;
+
+            &:hover {
+                background-color: rgb(94, 54, 238);
+            }
+        }
+
+        & h5 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+    }
+}
