@@ -1,10 +1,14 @@
-import { FaSlack, FaGoogle, FaFacebook } from "react-icons/fa6";
 
+
+import { FaTwitch } from "react-icons/fa6";
 import './styles/modal.css';
 
 export default function LoginModal({
-    set
+    set,
+    loading = true,
+    methods
 }) {
+
     return (
         <div
             className="modal outer"
@@ -14,9 +18,17 @@ export default function LoginModal({
         >
             <div className="inner">
                 <h5>Login</h5>
-                <button><FaFacebook />Login with Facebook</button>
-                <button><FaGoogle />Login with Google</button>
-                <button><FaSlack />Login with Slack</button>
+                {loading ? (
+                    <p>Loading...</p>
+                ) : (
+                    <>
+                        <button
+                            onClick={() => { methods["twitch"]() }}
+                        >
+                            <FaTwitch />Login with Twitch
+                        </button>
+                    </>
+                )}
             </div>
         </div>
     )
